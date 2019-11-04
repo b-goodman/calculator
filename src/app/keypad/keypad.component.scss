@@ -13,6 +13,18 @@ $function-btn-bg-hov: #B6B8E3;
 $calculator-1-hex: #170126;
 $calculator-5-hex: #F2916D;
 
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
 .grid {
     display: flex;
     flex-flow: row-reverse;
@@ -23,6 +35,8 @@ $calculator-5-hex: #F2916D;
 
 %btn {
     width: 50px;
+    font-weight: 600;
+    font-size: 26px;
     height: $btn-height;
     border: 1px solid gray;
     text-align: center;
@@ -32,6 +46,9 @@ $calculator-5-hex: #F2916D;
     margin: 3px;
 
     &[data-value='0'] {
+        width: 110px;
+    }
+    &[data-value='='] {
         width: 110px;
     }
 
@@ -50,6 +67,7 @@ $calculator-5-hex: #F2916D;
 
 .operator {
     @extend %btn;
+    font-size: 50px;
     background: $operator-btn-bg;
     &[data-hover='true'] {
         background: $operator-btn-bg-hov;

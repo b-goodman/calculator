@@ -1,19 +1,27 @@
 
-<div class='grid'>
-    <div *ngFor='let value of digits'>
-        <div class='btn digit' [appHighlight] [appActive] [attr.data-value]='value' [innerHTML]='value' (click)='handleBtnClick($event)'></div>
+<!-- standard keys -->
+<div class='col'>
+    <!-- functions -->
+    <div class='row'>
+        <div *ngFor='let value of functionKeys'>
+            <div class='btn function' [appHighlight] [appActive] [attr.data-value]='value.value' [innerHTML]='value.display' (click)='handleBtnClick($event)'></div>
+        </div>
+    </div>
+
+    <div class='row'>
+        <!-- digits -->
+        <div class='grid'>
+            <div *ngFor='let value of digits'>
+                <div class='btn digit' [appHighlight] [appActive] [attr.data-value]='value' [innerHTML]='value' (click)='handleBtnClick($event)'></div>
+            </div>
+        </div>
+
+        <!-- operators -->
+        <div class='col'>
+            <div *ngFor='let value of operators'>
+                <div class='btn operator' [appHighlight] [appActive] [attr.data-value]='value.value' [innerHTML]='value.display' (click)='handleBtnClick($event)'></div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class='grid'>
-    <div *ngFor='let value of operators'>
-        <div class='btn operator' [appHighlight] [appActive] [attr.data-value]='value.value' [innerHTML]='value.display' (click)='handleBtnClick($event)'></div>
-    </div>
-</div>
-
-
-<div class='grid'>
-    <div *ngFor='let value of functionKeys'>
-        <div class='btn function' [appHighlight] [appActive] [attr.data-value]='value.value' [innerHTML]='value.display' (click)='handleBtnClick($event)'></div>
-    </div>
-</div>
