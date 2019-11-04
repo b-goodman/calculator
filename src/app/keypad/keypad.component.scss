@@ -1,0 +1,65 @@
+$btn-height: 50px;
+$btn-bg-act: #D9A384;
+
+$digit-btn-bg: #ADC5D9;
+$digit-btn-bg-hov:#99AEBF;
+
+$operator-btn-bg: #5C8072;
+$operator-btn-bg-hov:#537367;
+
+$function-btn-bg: #ABADD7;
+$function-btn-bg-hov: #B6B8E3;
+
+$calculator-1-hex: #170126;
+$calculator-5-hex: #F2916D;
+
+.grid {
+    display: flex;
+    flex-flow: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 180px;
+}
+
+%btn {
+    width: 50px;
+    height: $btn-height;
+    border: 1px solid gray;
+    text-align: center;
+    vertical-align: middle;
+    line-height: $btn-height;
+    cursor: pointer;
+    margin: 3px;
+
+    &[data-value='0'] {
+        width: 110px;
+    }
+
+    &[data-active='true'], &:active {
+        background: $btn-bg-act !important;
+    }
+}
+
+.digit {
+    @extend %btn;
+    background: $digit-btn-bg;
+    &[data-hover='true'] {
+        background: $digit-btn-bg-hov;
+    }
+}
+
+.operator {
+    @extend %btn;
+    background: $operator-btn-bg;
+    &[data-hover='true'] {
+        background: $operator-btn-bg-hov;
+    }
+}
+
+.function {
+    @extend %btn;
+    background: $function-btn-bg;
+    &[data-hover='true'] {
+        background: $function-btn-bg-hov;
+    }
+}
